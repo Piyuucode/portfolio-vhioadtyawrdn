@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vhio Aditya Wardana</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="path/to/your/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Oswald:wght@400;700&family=Lato:wght@400;700&family=Exo:wght@400;700&family=Raleway:wght@400;700&family=Noto+Sans:wght@400;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa;
+        color: #495057;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between; /* Adjusted to add space between logo and navigation */
+        align-items: center;
+        z-index: 100;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+        height: 65px;
+      }
+
+      header h2 {
+        color: #333;
+        font-weight: 500;
+        font-size: 2em;
+        margin-left: 4%;
+      }
+
+      span {
+        color: #6f42c1;
+      }
+
+      nav a:hover {
+        border-radius: 8px;
+        text-decoration: none;
+        background-color: #33333325;
+        color: #6f42c1;
+      }
+
+      header a {
+        color: #333;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+        margin: 0 10px;
+      }
+      .nav-icon {
+        display: none;
+        cursor: pointer;
+      }
+
+      nav {
+        display: flex;
+      }
+
+      @media screen and (max-width: 600px) {
+        .nav-icon {
+          display: block;
+        }
+
+        header {
+          padding-right: 20px;
+          height: 5%;
+        }
+
+        header h2 {
+          margin-left: 2%;
+          font-size: 1.2em; /* Adjusted font size for better visibility */
+        }
+
+        nav {
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          position: absolute;
+          top: 35px; /* Adjusted top position for better spacing */
+          left: 0;
+          background-color: #ffffff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          margin-left: 1%;
+        }
+
+        nav.active {
+          display: flex;
+        }
+
+        nav a {
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .navigation a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 601px) {
+        .nav-icon {
+          display: none;
+        }
+
+        nav {
+          display: flex;
+        }
+
+        .navigation a.icon {
+          display: none;
+        }
+      }
+
+      .tombol-download {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 8px 35px;
+        background: #6f42c1;
+        border-radius: 10px;
+        border: 2px solid #6f42c1;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .tombol-download:hover {
+        color: #6f42c1;
+        background: transparent;
+        text-decoration: none;
+      }
+
+      .tombol-download i:hover {
+        color: #6f42c1;
+        background: transparent;
+      }
+
+      .menu-toggle {
+        display: none;
+        cursor: pointer;
+      }
+
+      .navigation {
+        display: flex;
+      }
+
+      .navigation a {
+        display: block;
+      }
+
+      @media screen and (max-width: 768px) {
+        .navigation {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .navigation.active {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .tombol-download {
+          margin-top: 10px; /* Adjust the top margin for better spacing */
+          order: -1; /* Move the download button to the beginning of the flex container */
+          max-width: 95%;
+          margin-left: 1%;
+        }
+
+        nav {
+          flex-direction: column; /* Adjust the direction for better display of stacked items */
+        }
+
+        nav a {
+          margin: 10px 0;
+          max-width: 95%;
+          margin-left: 1%;
+        }
+      }
+
+      .home {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: url("backgrounnd.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 30px 100px;
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .profile-image {
+        flex: 1;
+        margin-left: 30px;
+      }
+
+      .profile-image img {
+        width: 100%;
+        border-radius: 15px 50px 30px;
+        box-shadow: 10px 10px #6f42c1;
+      }
+
+      @media screen and (max-width: 600px) {
+        .home {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          background: url("backgrounnd.jpg");
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          align-items: center;
+          justify-content: center; /* Center content horizontally */
+          padding: 30px 20px; /* Adjusted padding for smaller screens */
+          margin-bottom: 25%;
+          margin-top: 40%;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column; /* Updated to column for smaller screens */
+          justify-content: center;
+          text-align: left; /* Align text content to the left */
+          margin-left: 5%;
+        }
+
+        .profile-image {
+          order: -1; /* Change the order to move the image above the text */
+          margin-bottom: 50px;
+          margin-left: 50px;
+        }
+
+        .profile-image img {
+          width: 80%;
+          border-radius: 15px 50px 30px;
+          box-shadow: 10px 10px #6f42c1;
+        }
+
+        .text-content {
+          max-width: 90%;
+          font-size: x-small;
+        }
+
+        .text-content p {
+          font-size: small;
+        }
+
+        .grup-tombol {
+          display: flex;
+          align-items: center; /* Center buttons horizontally */
+          justify-content: left; /* Center buttons vertically */
+          flex-direction: row; /* Change flex direction to row */
+        }
+
+        .grup-tombol a {
+          color: #ffffff;
+          text-decoration: none;
+          padding: 8px 12px; /* Adjusted padding for buttons */
+          background: #6f42c1;
+          border-radius: 5px;
+          border: 1px solid #6f42c1;
+          transition: 0.3s;
+        }
+
+        .grup-tombol a i {
+          padding: 0;
+        }
+
+        .grup-tombol a:hover:nth-child(1) {
+          color: #6f42c1;
+          background: transparent;
+        }
+
+        .grup-tombol a:nth-child(2) {
+          color: #6f42c1;
+          background: transparent;
+          padding: 8px 12px; /* Adjusted padding for buttons */
+        }
+
+        .grup-tombol a:hover:nth-child(2) {
+          color: #ffffff;
+          background: #6f42c1;
+        }
+      }
+
+      .text-content {
+        flex: 2;
+      }
+
+      .content h2 {
+        font-size: 3em;
+        font-weight: 500;
+        color: #343a40;
+        font-family: "Playfair Display", serif;
+      }
+
+      .content h4 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #6f42c1;
+      }
+
+      .content p {
+        padding: 10px 0 40px 0;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .grup-tombol a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 20px;
+        background: #6f42c1;
+        border-radius: 10px;
+        border: 2px solid #6f42c1;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .grup-tombol a i {
+        padding: 5px;
+      }
+
+      .grup-tombol a:hover:nth-child(1) {
+        color: #6f42c1;
+        background: transparent;
+      }
+
+      .grup-tombol a:nth-child(2) {
+        color: #6f42c1;
+        background: transparent;
+        margin-left: 30px;
+        padding: 10px 30px;
+      }
+
+      .grup-tombol a:hover:nth-child(2) {
+        color: #ffffff;
+        background: #6f42c1;
+      }
+
+      .sosmed {
+        position: absolute;
+      }
+
+      .sosmed a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background: transparent;
+        border-radius: 50%;
+        margin-right: 22px;
+        text-align: center;
+        line-height: 40px;
+        outline: 3px solid #6f42c1;
+        transition: 0.3s;
+      }
+
+      .sosmed a:hover {
+        transform: translateY(-5px);
+      }
+
+      .sosmed a i {
+        color: #343a40;
+        font-size: 20px;
+      }
+
+      .about-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+        max-width: 90%;
+        margin-left: 3%;
+      }
+
+      .about-image {
+        flex: 1;
+        margin-right: 30px;
+      }
+
+      .about-image img {
+        width: 75%;
+        margin-left: 15%;
+        border-radius: 15px 50px 30px;
+        box-shadow: 10px 10px #6f42c1;
+      }
+
+      @media screen and (max-width: 600px) {
+        .about-content {
+          display: flex;
+          flex-direction: column; /* Display content in a column on smaller screens */
+          align-items: center;
+          justify-content: center;
+          padding: 50px 0;
+        }
+
+        .about-image {
+          margin-bottom: 50px;
+        }
+
+        .about-image img {
+          width: 80%; /* Make the image fill the container width */
+          border-radius: 15px 50px 30px;
+          box-shadow: 10px 10px #6f42c1;
+        }
+
+        .about-text h2 {
+          justify-content: center;
+          align-items: center;
+          font-size: 1.2em;
+          text-align: center;
+        }
+
+        .about-text {
+          max-width: 80%;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: small;
+        }
+      }
+
+      .about-text {
+        flex: 2;
+      }
+
+      .about-text h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #6f42c1;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .about-text h2 i {
+        padding: 10px;
+      }
+
+      .about-text p {
+        margin-top: 20px;
+        line-height: 1.6;
+        color: #495057;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .skill {
+        padding: 20px;
+      }
+
+      .skill h2 {
+        margin-bottom: 20px;
+        font-family: "Exo", sans-serif;
+      }
+
+      .skill-cards-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .skill-card {
+        text-align: center;
+        margin: 20px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+        flex: 0 1 calc(13% - 40px);
+        cursor: pointer;
+      }
+
+      @media (max-width: 600px) {
+        .skill-card {
+          flex: 0 1 calc(50% - 60px);
+        }
+
+        .skill {
+          margin-left: 15px;
+        }
+
+        #skill h2 {
+            font-size: 1.2em;
+        }
+
+        #skill h4 {
+            font-size: 1em;
+        }
+        
+      }
+
+      .skill-card:hover {
+        transform: scale(1.05);
+      }
+
+      .skill-card i {
+        font-size: 48px;
+        color: #3498db;
+      }
+
+      .skill-card h3 {
+        margin-top: 10px;
+        font-size: small;
+        color: #333;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .skill h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #6f42c1;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        font-family: "Exo", sans-serif;
+      }
+
+      .skill h4 {
+        font-size: 1.5em;
+      }
+
+      .contact {
+        padding: 50px 0;
+        text-align: center;
+        background-color: #f8f9fa;
+        margin-top: 5%;
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contact-info {
+        flex: 1;
+        text-align: left;
+        padding-right: 20px;
+      }
+
+      .contact-info h1 {
+        font-size: 4em;
+        font-weight: bold;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #343a40;
+        display: inline-block;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        background-color: #6f42c1;
+        color: #ffffff;
+        padding: 10px;
+        border: 1px solid #ffffff;
+        border-radius: 13px;
+      }
+
+      textarea {
+        background-color: #6f42c1;
+        color: #ffffff;
+        padding: 10px;
+        border: 1px solid #ffffff;
+        border-radius: 13px;
+      }
+
+      input::placeholder,
+      text::placeholder,
+      email::placeholder,
+      textarea::placeholder {
+        color: #ffffff;
+        opacity: 2.5;
+        text-shadow: 50px #343a40;
+      }
+
+      input[type="submit"] {
+        background-color: #6f42c1;
+        border: none;
+        border-radius: 15px;
+        height: 40px;
+        width: 200px;
+        color: #ffffff;
+        font-size: 1em;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #ff9100;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .contact-image {
+        flex: 1;
+        text-align: right;
+        margin-top: 10%;
+      }
+
+      .contact-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+      }
+
+      .input-group {
+        flex-direction: row; /* Mengatur arah flex menjadi baris */
+        justify-content: space-between; /* Membuat spasi antara elemen-elemen */
+      }
+
+      .input-field {
+        width: 48%; /* Membuat lebar input field 48% dari parent */
+        margin-bottom: 10px; /* Memberi jarak antara input fields */
+      }
+
+      @media screen and (max-width: 600px) {
+        .contact {
+          margin-left: 25px;
+        }
+
+        .contact-container {
+          flex-direction: column; /* Mengubah arah flex menjadi kolom */
+          align-items: center; /* Menengahkan elemen-elemen secara horizontal */
+          text-align: center; /* Mengatur teks ke tengah */
+        }
+
+        .contact-info {
+          order: 2; /* Mengubah urutan tampilan info agar berada di bawah */
+          margin-top: 20px; /* Memberi jarak antara teks dan gambar */
+        }
+
+        .contact-info h1 {
+          font-size: 2em;
+        }
+
+        .contact-image {
+          order: 1; /* Mengubah urutan tampilan gambar agar berada di atas */
+          margin-bottom: 20px; /* Memberi jarak antara gambar dan form */
+          width: 50%;
+        }
+
+        form {
+          width: 100%; /* Membuat form mengisi lebar penuh */
+          font-size: 1em;
+        }
+
+        .input-group {
+          flex-direction: row; /* Mengatur arah flex menjadi baris */
+          justify-content: space-between; /* Membuat spasi antara elemen-elemen */
+        }
+
+        .input-field {
+          width: 48%; /* Membuat lebar input field 48% dari parent */
+          margin-bottom: 10px; /* Memberi jarak antara input fields */
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .copyright {
+          font-size: small;
+        }
+      }
+
+      /* CSS untuk footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.navigation-1 {
+  justify-content: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-media, .navigation-1 {
+    margin: 10px 0;
+    text-align: center; /* Mengatur teks di tengah untuk kedua elemen */
+}
+
+.navigation-1 ul {
+    list-style-type: none;
+    padding: 0; /* Menghilangkan padding bawaan dari daftar */
+}
+
+.navigation-1 ul li {
+    display: inline; /* Mengubah tata letak li menjadi inline */
+    margin: 0 10px; /* Menambahkan ruang di samping tiap item navigasi */
+}
+
+.navigation-1 ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation-1 ul li a:hover {
+    text-decoration: underline;
+}
+
+/* CSS untuk mengatur ukuran ikon */
+.fa {
+    font-size: 20px;
+}
+
+/* CSS untuk mengatur ruang antar ikon */
+.social-media a:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+
+      #project {
+        padding: 30px; /* Updated padding value */
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        margin-top: 20px; /* Added margin-top for separation */
+        position: relative;
+      }
+
+      section h2 {
+        color: #333;
+      }
+
+      .room-container {
+        justify-content: space-between;
+      }
+
+      .room-card {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+      }
+
+      .room-image {
+        width: 60%;
+        border-radius: 10px;
+        margin-right: 20px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.685);
+      }
+
+      .room-details {
+        flex: 1;
+      }
+
+      @media screen and (max-width: 600px) {
+        #project {
+          justify-content: center;
+        }
+
+        #project h2 {
+          font-size: 1.5em;
+          font-weight: 700;
+          color: #6f42c1;
+          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+          font-family: "Exo", sans-serif;
+        }
+
+        #project h4 {
+          font-size: small;
+        }
+
+        .room-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .room-card {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .room-details {
+          width: 100%;
+          padding: 15px;
+          box-sizing: border-box;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .room-title {
+          font-size: small;
+          font-weight: 500;
+        }
+
+        .room-image {
+          margin-top: 10px; /* Adjust margin as needed */
+          margin-bottom: 20px;
+          width: 100%; /* Make the image fill the container width */
+          height: auto; /* Maintain aspect ratio */
+          border-radius: 5px; /* Add border-radius if desired */
+        }
+      }
+
+      .room-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .room-description {
+        font-size: 1em;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .booking-button {
+        background-color: #6f42c1;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+      }
+
+      .booking-button:hover {
+        background-color: #51338a;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      @media screen and (max-width: 600px) {
+        .blog-post {
+          flex-direction: column-reverse; /* Reverse the order for mobile */
+          font-size: smaller;
+        }
+
+        #blog h2 {
+          font-size: 1.2em;
+          font-weight: 700;
+          color: #6f42c1;
+          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+          font-family: "Exo", sans-serif;
+        }
+
+        .blog h4 {
+          font-size: small;
+        }
+
+        .post-content {
+          margin-bottom: 30px; /* Remove margin to avoid extra space */
+        }
+
+        .blog-post img {
+          display: none;
+          visibility: hidden;
+        }
+      }
+
+      /* General styles for all devices */
+      .blog {
+        max-width: 90%;
+        margin: 20px auto;
+      }
+
+      .blog-post {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        background-color: #ffffff00;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .post-content {
+        flex: 1;
+        padding: 20px;
+        margin-bottom: 30px;
+        margin: 15px;
+      }
+
+      .post-content p {
+        color: #111111;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .post-content h5 {
+        font-size: 1em;
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+
+      .blog-post img {
+        width: 45%;
+        border-radius: 15px;
+      }
+
+      .blog h2 {
+        font-size: 2em; /* Fix the typo in the font size property */
+        font-weight: 700;
+        color: #6f42c1;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .blog h4 {
+        margin-bottom: 5%;
+        max-width: 65%;
+      }
+
+      a.button {
+        display: inline-block;
+        padding: 7px 15px;
+        background-color: #6f42c1;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      a.button:hover {
+        display: inline-block;
+        padding: 7px 15px;
+        background-color: #ff6900;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .project h4 {
+        max-width: 65%;
+      }
+
+      #project h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #6f42c1;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      #project h4 {
+        margin-bottom: 5%;
+        max-width: 65%;
+      }
+
+      .garis hr {
+        width: 300px; 
+        border: 1px solid rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h2>My<span>portfolio</span></h2>
+      <div class="nav-icon">
+        <a href="javascript:void(0)" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <nav class="navigation" id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="download/CV  Vhio aditya wardana.pdf" class="tombol-download"
+          >Download CV <i class="fas fa-download"></i
+        ></a>
+        <a href="javascript:void(0)" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
+    </header>
+
+    <section id="home" class="home">
+      <div class="content">
+        <div class="text-content">
+          <h2>Hi, I'm <span>Vhio Aditya</span></h2>
+          <h4>Front End Developer</h4>
+          <p>
+            Front-end developer adalah pihak pengembang bagian depan atau
+            halaman depan dari aplikasi atau website dimana interaksi dengan
+            pengguna terjadi. Jika diurutkan secara kronologis, sebuah rancangan
+            sebuah aplikasi akan dibuat oleh tim UI/UX designer. Front-end akan
+            menggunakan Hyper Text Markup Language (HTML), Cascading Style
+            Sheets (CSS) dan JavaScript untuk membangun tampilan yang
+            dibutuhkan.
+          </p>
+
+          <div class="grup-tombol">
+            <a
+              href="mailto:vhioadityaa@gmail.com?subject=Ada yang bisa saya kerjakan?"
+              >Hire Me<i class="fas fa-long-arrow-alt-right"></i
+            ></a>
+            <a href="#project">View Projects</a>
+          </div>
+          <br /><br /><br />
+
+          <div class="sosmed">
+            <a href="https://wa.me/qr/FES76OZWCRDUC1"
+              ><i class="fab fa-whatsapp" style="color: green"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/vhioadtyawrdn?igsh=MWZ6eDIzc29iM2NubQ=="
+              ><i class="fab fa-instagram" style="color: red"></i
+            ></a>
+            <a href="https://www.tiktok.com/@piyyyyyyyyyyyyyyy?_t=8lGdTDGTJEV&_r=1"
+              ><i class="fab fa-tiktok" style="color: rgb(0, 0, 0)"></i
+            ></a>
+          </div>
+        </div>
+        <div class="profile-image">
+          <img src="piyuu.jpeg" alt="Vhio Aditya's Photo" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="piyy.jpeg" alt="Your Image" />
+        </div>
+        <div class="about-text">
+          <h2 style="color: #6f42c1">About Me<i class="fas fa-rocket"></i></h2>
+          <p>
+            Halo! Saya Vhio Aditya Wardana, pemandu perjalanan seumur 16 tahun
+            yang sedang menjelajahi dunia pemrograman. Berkarya dan belajar di
+            SMKN 12 Kabupaten Tangerang, saya terpesona dengan dunia Rekayasa
+            Perangkat Lunak (RPL), terutama sebagai seorang FRONT END DEVELOPER.
+            Pada dasarnya, saya adalah mahasiswa SMA/SMK yang suka menggali
+            ilmu, terutama tentang dunia coding. Menariknya, semangat belajar
+            saya tidak hanya terbatas di ruang kelas. Saya juga mengasah
+            keterampilan saya di dunia pemrograman secara otodidak, di rumah.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skill" class="skill">
+      <div align="center">
+        <h2>Menggunakan technologi</h2>
+        <h4>
+          Integrasi Teknologi Modern untuk Efisiensi dan Keunggulan Kompetitif
+        </h4>
+      </div>
+      <div class="skill-cards-container">
+        <div class="skill-card">
+          <i class="fab fa-html5" style="color: red"></i>
+          <h3>HTML</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-css3"></i>
+          <h3>CSS</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-js" style="color: yellow"></i>
+          <h3>Javascript</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-php"></i>
+          <h3>PHP</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-bootstrap" style="color: #6f42c1"></i>
+          <h3>Bootstrap</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-comment-dots" style="color: green"></i>
+          <h3>Chat GPT</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="project-header" align="center">
+        <h2>My projects</h2>
+        <h4>
+          Explore the journey of turning ideas into achievements, meticulously
+          planned and flawlessly executed.
+        </h4>
+      </div>
+      <div class="room-container">
+        <div class="room-card">
+          <img class="room-image" src="p 2.jpg" alt="Kamar 3" />
+          <div class="room-details">
+            <h3 class="room-title">Perbankan</h3>
+            <p class="room-description">
+              Proyek ini bertujuan untuk mengembangkan tampilan web yang
+              responsif dan aman untuk sebuah bank, menyediakan akses yang
+              berbeda untuk CEO, admin, dan pengguna (user). Fokus utama
+              tampilan web ini adalah menyediakan halaman login dengan tiga
+              tingkat akses yang berbeda dan halaman transaksi khusus untuk
+              pengguna.
+            </p>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <img class="room-image" src="p 3.jpg" alt="Kamar 3" />
+          <div class="room-details">
+            <h3 class="room-title">Perhotelan</h3>
+            <p class="room-description">
+              Website perhotelan ini dibangun untuk memberikan pengalaman yang
+              mudah dan efisien bagi pengguna dengan tiga tingkat akses yang
+              berbeda: admin hotel, staf resepsionis, dan tamu. Memberikan
+              informasi tentang ketersediaan kamar, memudahkan proses pemesanan,
+              dan memfasilitasi komunikasi dengan hotel.
+            </p>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <img class="room-image" src="p 4.jpg" alt="Kamar 3" />
+          <div class="room-details">
+            <h3 class="room-title">Coffe shop</h3>
+            <p class="room-description">
+              Website Coffee Shop ini dibangun untuk memberikan pengalaman yang
+              menyenangkan dan nyaman bagi pengguna dengan tiga tingkat akses
+              yang berbeda: pemilik toko, barista, dan pelanggan. Menyajikan
+              informasi tentang menu kopi, lokasi toko, dan menyediakan sarana
+              untuk reservasi atau pertanyaan.
+            </p>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <img class="room-image" src="p 5.jpg" alt="Kamar 3" />
+          <div class="room-details">
+            <h3 class="room-title">Banana-chips</h3>
+            <p class="room-description">
+              Website ini dibuat untuk memenuhi tugas pkk dimana peserta didik
+              wajib membuat website tentang jualan nya masing masing, dan perlu
+              anda ketahui website ini sudah responsive loh!
+            </p>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <img class="room-image" src="p 6.jpg" alt="Kamar 3" />
+          <div class="room-details">
+            <h3 class="room-title">PT. Dhevhira Satria Abadi</h3>
+            <p class="room-description">
+              Website ini dibuat bertujuan untuk memberikan informasi tentang
+              perusahan kami yang baru saja didirikan, perusahaan ini bergerak
+              di bidang Konveksi, Kontruksi, Pengadaan barang dan jasa, dan Jasa
+              bodyguard.
+            </p>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <img class="room-image" src="p 1.jpg" alt="Kamar 3" />
+          <div class="room-details">
+            <h3 class="room-title">Sekolah</h3>
+            <p class="room-description">
+              Saya membuat tampilan web sekolah ini hanya dengan waktu yang
+              begitu singkat, karena ini sebenernya web dibuat untuk memenuhi
+              pre-test lomba komptensi siswa.
+            </p>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <img class="room-image" src="p 7.jpg" alt="Kamar 3" />
+          <div class="room-details">
+            <h3 class="room-title">Psikotes - polri</h3>
+            <p class="room-description">
+              Kami menyediakan platform tes online yang efisien dan transparan
+              untuk calon petugas kepolisian. Uji kemampuan Anda dalam
+              pengetahuan umum, berpikir logis, dan kecermatan dengan percaya
+              diri. Bersiaplah untuk menjadi bagian dari Polri yang profesional
+              dan berdedikasi!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="blog">
+      <div align="center">
+        <h2>Recent Articles</h2>
+        <h4>
+          Reach out to us today and start learning about programming yourself
+          and produce your work.
+        </h4>
+      </div>
+      <div class="blog-post">
+        <div class="post-content" style="text-align: right">
+          <h2>Mengenal apa itu coding?</h2>
+          <h5>04 - Januari - 2024</h5>
+          <p>
+            Coding atau pemrograman adalah proses menulis instruksi untuk
+            komputer dalam bentuk bahasa program (bahasa yang dimengerti oleh
+            komputer). Instruksi ini disebut kode. Orang yang menulis kode
+            disebut programmer atau developer
+          </p>
+          <p>
+            <a
+              href="https://sko.dev/tips-belajar-coding-untuk-pemula"
+              class="button"
+              >Read more</a
+            >
+          </p>
+        </div>
+        <img src="blog 1.jpg" alt="Post 1 Image" />
+      </div>
+
+      <div class="blog-post">
+        <img src="blog 2.png" alt="Post 2 Image" />
+        <div class="post-content">
+          <h2>Cara belajar coding?</h2>
+          <h5>04 - Januari - 2024</h5>
+          <p>
+            Tertarik belajar coding setelah membaca manfaatnya di atas? Anda
+            perlu memahami cara belajar coding yang sistematis agar bisa
+            melakukannya dengan lancar. Ikuti langkah di bawah ini untuk mulai
+            belajar coding.
+          </p>
+          <p>
+            <a
+              href="https://toffeedev.com/blog/seo/coding-adalah"
+              class="button"
+              >Read more</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="blog-post">
+        <div class="post-content" style="text-align: right">
+          <h2>Jenis bahasa pemrograman?</h2>
+          <h5>04 - Januari - 2024</h5>
+          <p>
+            Kamu mungkin bertanya-tanya, apakah coding sangat sulit? Pada
+            kenyataannya, coding adalah aktivitas yang cukup mudah.
+          </p>
+          <p>
+            Kamu bisa belajar coding dengan mengikuti kursus atau bahkan belajar
+            secara otodidak. Selain itu, kamu juga dapat secara bebas untuk
+            melakukan coding dalam berbagai bahasa pemrograman.
+          </p>
+          <p>
+            <a
+              href="https://www.jagoanhosting.com/blog/bahasa-pemrograman/"
+              class="button"
+              >Read more</a
+            >
+          </p>
+        </div>
+        <img src="blog 3.png" alt="Post 3 Image" />
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h1>Got a project in <span>mind?</span></h1>
+          <form action="proses.php" method="post">
+            <div class="input-group">
+              <div class="input-field">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+            </div>
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Message"
+              required
+            ></textarea>
+            <input type="submit" value="message" />
+          </form>
+        </div>
+        <div class="contact-image">
+          <img src="brand communication-pana.png" alt="Vector Image" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-media">
+                <a href="https://wa.me/qr/FES76OZWCRDUC1"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@piyyyyyyyyyyyyyyy?_t=8lGdTDGTJEV&_r=1"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/vhioadtyawrdn?igsh=MWZ6eDIzc29iM2NubQ=="><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Piyuucode"><i class="fab fa-github"></i></a>
+            </div>
+            <nav class="navigation-1">
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i><span> </span>Home</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i><span> </span>About</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i><span> </span>Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="garis" align="center">
+            <hr/>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Vhio aditya wardana. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const h4Element = document.querySelector(".content h4");
+        const pElement = document.querySelector(".content p");
+        const texts = [
+          {
+            h4: "Front End Developer",
+            p: "Front-end developer adalah pihak pengembang bagian depan atau halaman depan dari aplikasi atau website dimana interaksi dengan pengguna terjadi. Jika diurutkan secara kronologis, sebuah rancangan sebuah aplikasi akan dibuat oleh tim UI/UX designer. Front-end akan menggunakan Hyper Text Markup Language (HTML), Cascading Style Sheets (CSS) dan JavaScript untuk membangun tampilan yang dibutuhkan.",
+          },
+        ];
+        let index = 0;
+        let textIndex = 0;
+
+        function type() {
+          h4Element.textContent = texts[textIndex].h4.substring(0, index);
+          pElement.textContent = texts[textIndex].p;
+
+          index++;
+
+          if (index > texts[textIndex].h4.length) {
+            index = 0;
+            textIndex = (textIndex + 1) % texts.length;
+          }
+
+          setTimeout(type, 200);
+        }
+
+        type();
+      });
+    </script>
+
+    <script>
+      function myFunction() {
+        var navbar = document.getElementById("navbar");
+        navbar.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
